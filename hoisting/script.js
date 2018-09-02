@@ -79,3 +79,36 @@
 
 ///////////////////////////////////////
 // Lecture: The this keyword
+
+console.log(this);
+
+function foo() {
+  console.log(this);
+}
+
+foo();
+
+var sean = {
+  name: 'Sean',
+  yearOfBirth: 1994,
+  age: 24,
+  calculateAge: function() {
+    console.log(2018 - this.yearOfBirth);
+    console.log(this);
+
+    function innerFunction() {
+      console.log(this);
+    }
+    innerFunction()
+  }
+}
+
+var mike = {
+  name: 'Mike',
+  yearOfBirth: 1994
+}
+
+mike.calculateAge = sean.calculateAge;
+
+sean.calculateAge();
+mike.calculateAge();
