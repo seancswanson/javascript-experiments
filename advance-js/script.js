@@ -136,7 +136,7 @@ obj1.age = 30;
 
 // Functions returning Functions
 
-// 
+//
 // function interviewQuestion(job) {
 //   if (job === 'designer') {
 //     return function(name) {
@@ -162,3 +162,17 @@ obj1.age = 30;
 // designerQuestion('Michelle');
 //
 // interviewQuestion('teacher')('Sean');
+
+// // iife
+//
+// function game() {
+//   var score = Math.random() * 10;
+//   console.log(score >= 5);
+// }
+//
+// game();
+
+(function(goodLuck) {
+  var score = Math.random() * 10;
+  console.log(score >= 5 - goodLuck);
+})(5);
