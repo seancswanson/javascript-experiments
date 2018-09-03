@@ -199,26 +199,89 @@ obj1.age = 30;
 // retirementIceland(1990);
 // retirement(66)(1994);
 
+//
+// function interviewQuestion(job) {
+//   return function(name) {
+//     var question;
+//     if (job === 'teacher') {
+//       question = ', what subjects do you teach?';
+//     } else if (job === 'designer') {
+//       question = ', what is ux design?'
+//     } else {
+//       question = ', what do you do?'
+//     }
+//     var questionString = name + question;
+//     console.log(questionString);
+//   }
+// }
+//
+// var teacherInterview = interviewQuestion('teacher');
+// var designerInterview = interviewQuestion('designer');
+// var basicInterview = interviewQuestion('basic');
+//
+// teacherInterview('Sean');
+// designerInterview('Sean');
+// basicInterview('Sean');
 
-function interviewQuestion(job) {
-  return function(name) {
-    var question;
-    if (job === 'teacher') {
-      question = ', what subjects do you teach?';
-    } else if (job === 'designer') {
-      question = ', what is ux design?'
-    } else {
-      question = ', what do you do?'
-    }
-    var questionString = name + question;
-    console.log(questionString);
-  }
-}
+// Bind, Call, Apply
+//
+// var sean = {
+//   name: 'Sean',
+//   age: 24,
+//   job: 'teacher',
+//   presentation: function(style, timeOfDay) {
+//     if (style === 'formal') {
+//       console.log('Good ' + timeOfDay + ' ladies and gentlemen! My name is ' + this.name + '. I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old. Have a nice ' + timeOfDay + '!');
+//     } else if (style === 'friendly') {
+//       console.log('Good ' + timeOfDay + ' lassies and germs! I\'m a ' + this.job + ' and I\'m ' + this.age + ' years yung and bold. Have a ballin\' ' + timeOfDay + '!');
+//     }
+//   }
+// }
+//
+// var emily = {
+//   name: 'Emily',
+//   age: 35,
+//   job: 'designer'
+// }
+//
+// // sean.presentation('formal', 'morning');
+//
+// sean.presentation.call(emily, 'friendly', 'evening');
+//
+// // sean.presentation.apply(emily, ['friendly', 'morning']);
+//
+// var seanFormal = sean.presentation.bind(sean, 'formal');
+//
+// seanFormal('morning');
+//
+// var emilyFormal = sean.presentation.bind(emily, 'formal');
+//
+// emilyFormal('early morning');
 
-var teacherInterview = interviewQuestion('teacher');
-var designerInterview = interviewQuestion('designer');
-var basicInterview = interviewQuestion('basic');
-
-teacherInterview('Sean');
-designerInterview('Sean');
-basicInterview('Sean');
+// 
+// var years = [1994, 1993, 1292, 2005, 2002];
+//
+// function arrayCalc(arr, fn) {
+//   var arrRes = [];
+//
+//   for (var i = 0; i < arr.length; i++) {
+//     arrRes.push(fn(arr[i]));
+//   }
+//
+//   return arrRes;
+// }
+//
+// function isFullAge(limit, el) {
+//   return el >= limit;
+// }
+//
+// function calculateAge(el) {
+//   return 2018 - el;
+// }
+//
+// var ages = arrayCalc(years, calculateAge);
+//
+// var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20))
+//
+// console.log(ages)
+// console.log(fullJapan)
