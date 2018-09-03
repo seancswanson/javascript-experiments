@@ -172,7 +172,53 @@ obj1.age = 30;
 //
 // game();
 
-(function(goodLuck) {
-  var score = Math.random() * 10;
-  console.log(score >= 5 - goodLuck);
-})(5);
+// (function(goodLuck) {
+//   var score = Math.random() * 10;
+//   console.log(score >= 5 - goodLuck);
+// })(5);
+
+// Closures
+//
+// function retirement(retirementAge) {
+//   var a = ' years left until retirement';
+//   return function(yearOfBirth) {
+//     var age = 2018 - yearOfBirth;
+//     console.log((retirementAge - age) + a)
+//   }
+// }
+//
+// var retirementUS = retirement(66);
+//
+//
+// retirementGerman = retirement(65);
+//
+// retirementIceland = retirement(67);
+//
+// retirementUS(1994);
+// retirementGerman(1942);
+// retirementIceland(1990);
+// retirement(66)(1994);
+
+
+function interviewQuestion(job) {
+  return function(name) {
+    var question;
+    if (job === 'teacher') {
+      question = ', what subjects do you teach?';
+    } else if (job === 'designer') {
+      question = ', what is ux design?'
+    } else {
+      question = ', what do you do?'
+    }
+    var questionString = name + question;
+    console.log(questionString);
+  }
+}
+
+var teacherInterview = interviewQuestion('teacher');
+var designerInterview = interviewQuestion('designer');
+var basicInterview = interviewQuestion('basic');
+
+teacherInterview('Sean');
+designerInterview('Sean');
+basicInterview('Sean');
